@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Notes App</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>
+            Notes App
+        </h1>
+        
+       
+        <h2>
+            Take notes and never forget
+        </h2>
+        <div id="search">
+            <label for="search-box">
+                Search: 
+                <input type="text" placeholder="search string" id="search-box">
+            </label>
+            <div id="selection" class="top-margin-ten">
+                <select name="" id="sort-by">
+                    <option value="byEdited">Sort by last edited</option>
+                    <option value="byCreated">Sort by recently created</option>
+                    <option value="alphabetical">Sort alphabetically</option>
+                </select>
+            </div>
+            
+        </div>
+        <div id="notes">
+          
+        </div>
+        <div class="add-remove">
+            <form id="add-note">
+                <input type="text" placeholder="title:note" id="newNote" name="newNote">
+                <button>
+                    Add Note
+                </button>
+            </form>
+        </div>
+     
+        
+    </div>
+    <script src="./notes-functions.js"></script>
+    <script src="./notes-app.js"></script>
+</body>
+</html>

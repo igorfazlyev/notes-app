@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Edit Note</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Note</h1>
+        <div class="edit-note">
+            <button id="remove-note">
+                Remove Note
+            </button>
+            <div id="title">
+                <label for="note-title">Note title:</label>
+                <br>
+                <input type="text" name="note-title" id="note-title" placeholder="note title">
+            </div>
+            <div id="body">
+                <label for="note-body">
+                    Note text:
+                </label>
+                <br>
+                <textarea name="note-body" id="note-body" placeholder="note text" cols="30" rows="10">  
+            </div>
+           
+            </textarea>
+        </div>
+
+        <footer>
+            <a href="./index.html">Back to Index</a>
+        </footer>
+        
+    </div>
+    <script src="./notes-functions.js"></script>
+    <script src="./notes-edit.js"></script>
+</body>
+</html>
