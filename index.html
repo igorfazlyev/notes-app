@@ -3,41 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
     <title>Notes App</title>
     
 </head>
 <body>
     <div class="container">
-        <h1>
-            Notes App
-        </h1>
-        
-       
-        <h2>
-            Take notes and never forget
-        </h2>
-        <div id="search">
+        <div class="header">
+            <h1 class="header__title">
+                Notes App
+            </h1>
+            
+           
+            <h2 class="header__subtitle">
+                Take notes and never forget
+            </h2>
+        </div>
+       <div class="actions">
+        <div class="actions___container">
             <label for="search-box">
                 Search: 
-                <input type="text" placeholder="search string" id="search-box">
+                <input class="input" type="text" placeholder="search string" id="search-box">
             </label>
-            <div id="selection" class="top-margin-ten">
-                <select name="" id="sort-by">
-                    <option value="byEdited">Sort by last edited</option>
-                    <option value="byCreated">Sort by recently created</option>
-                    <option value="alphabetical">Sort alphabetically</option>
+            <div id="selection">
+                <label for="sort">Sort notes</label>
+                <select class="dropdown" name="sort" id="sort-by">
+                    <option value="updatedAt">Sort by last edited</option>
+                    <option value="createdAt">Sort by recently created</option>
+                    <option value="title">Sort alphabetically</option>
                 </select>
             </div>
-            
         </div>
+       </div>
+      
         <div id="notes">
           
         </div>
         <div class="add-remove">
             <form id="add-note">
-                <input type="text" placeholder="title:note" id="newNote" name="newNote">
-                <button>
+                <!-- <input type="text" placeholder="title:note" id="newNote" name="newNote">-->
+                <button class="button"> 
                     Add Note
                 </button>
             </form>
@@ -45,7 +51,8 @@
      
         
     </div>
-    <script src="./notes-functions.js"></script>
-    <script src="./notes-app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"></script>
+    <script src="./scripts/notes-functions.js"></script>
+    <script src="./scripts/notes-app.js"></script>
 </body>
 </html>

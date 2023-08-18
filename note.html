@@ -3,38 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Edit Note</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <title>Notes App</title>
 </head>
 <body>
     <div class="container">
+        <div class="header">
+            <h1 class="header__title">
+                Notes App
+            </h1>
+            
+           
+            <h2 class="header__subtitle">
+                Take notes and never forget
+            </h2>
+        </div>
+        <div class="actions">
+            <div class="actions__container actions__container--spaced">
+                <a href="./index.html">Back to Index</a>
+                <div id="last-updated"></div>
+            </div>
+            
+        </div>
         <h1>Edit Note</h1>
-        <div class="edit-note">
-            <button id="remove-note">
-                Remove Note
-            </button>
-            <div id="title">
+        <div class="">
+           
+            <div id="title" class="title-input">
                 <label for="note-title">Note title:</label>
                 <br>
                 <input type="text" name="note-title" id="note-title" placeholder="note title">
             </div>
-            <div id="body">
+          
+            <div id="body" class="body-input">
                 <label for="note-body">
                     Note text:
                 </label>
                 <br>
                 <textarea name="note-body" id="note-body" placeholder="note text" cols="30" rows="10">  
+                </textarea>
             </div>
            
-            </textarea>
+            <button id="remove-note" class="button button--secondary">
+                Remove Note
+            </button>
         </div>
 
-        <footer>
-            <a href="./index.html">Back to Index</a>
-        </footer>
+        
+            
+        
         
     </div>
-    <script src="./notes-functions.js"></script>
-    <script src="./notes-edit.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"></script>
+    <script src="./scripts/notes-functions.js"></script>
+    <script src="./scripts/notes-edit.js"></script>
 </body>
 </html>

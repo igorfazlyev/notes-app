@@ -1,7 +1,9 @@
+'use strict'
 let  notes = getSavedNotes();
 
 const filters = {
-    searchText:''
+    searchText:'',
+    sortBy: 'updatedAt'
 };
 
 
@@ -14,20 +16,20 @@ document.querySelector('#search-box').addEventListener('input', (e)=>{
 
 document.querySelector('#add-note').addEventListener('submit', (e)=>{
     e.preventDefault();
-    const contents = e.target.elements.newNote.value.split(":");
-    if (contents.length < 2) {
-        contents.push('');
-    }
     const noteID = crypto.randomUUID();
+    const timestamp = moment().valueOf();
+
     notes.push(
         {
             id: noteID,
-            title:contents[0],
-            body:contents[1]
+            title:'',
+            body:'',
+            createdAt: timestamp,
+            updatedAt: timestamp
         }
     );
     //renderNotes(notes, filters);
-    e.target.elements.newNote.value = '';
+    //e.target.elements.newNote.value = '';
     //localStorage.removeItem('notes'); there is no need for this line
     saveNotes(notes);
     //location.hash = noteID;
@@ -35,5 +37,15 @@ document.querySelector('#add-note').addEventListener('submit', (e)=>{
 })
 
 document.querySelector('#sort-by').addEventListener('change',(e)=>{
-    console.log(e.target.value);
+    //console.log(e.target.value);
+    filters.sortBy = e.target.value;
+    renderNotes(notes, filters);
+})
+
+window.addEventListener('storage', (e)=>{
+    if (e.key === 'notes'){
+        //console.log("we are here");
+        notes = JSON.parse(e.newValue);
+        renderNotes(notes, filters);
+    }
 })
